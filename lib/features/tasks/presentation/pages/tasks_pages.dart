@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../firebase/firebase_service.dart';
 import '../../data/repositories/task_repository.dart';
 import '../../domain/usecases/get_tasks_usecase.dart';
 import '../cubit/tasks_cubit.dart';
@@ -66,7 +67,11 @@ class _TasksPageState extends State<TasksPage> {
                         );
                       },
                     ),
-                  )
+                  ),
+                  ElevatedButton(
+                    onPressed: () => FirebaseService.crashNow(),
+                    child: const Text('Forçar Crash'),
+                  ),
                 ],
               ),
             );

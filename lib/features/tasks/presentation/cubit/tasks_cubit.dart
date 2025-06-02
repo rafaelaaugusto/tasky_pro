@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../../../../firebase/firebase_service.dart';
 import '../../domain/entities/task_model.dart';
 import '../../domain/usecases/get_tasks_usecase.dart';
 import 'tasks_state.dart';
@@ -39,6 +40,9 @@ class TasksCubit extends Cubit<TasksState> {
   }
 
   void _filterTasks(String query) {
+    FirebaseService.logEvent(
+        name: 'busca_realizada', parameters: {'query': query});
+
     if (query.isEmpty) {
       emit(TasksState.loaded(_allTasks));
     } else {
