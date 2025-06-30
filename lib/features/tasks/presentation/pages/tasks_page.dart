@@ -26,7 +26,7 @@ class _TasksPageState extends State<TasksPage> {
 
   @override
   void dispose() {
-    _cubit.close(); // fecha o cubit
+    _cubit.close();
     super.dispose();
   }
 

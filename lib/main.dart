@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'features/tasks/presentation/pages/tasks_pages.dart';
+import 'features/tasks/presentation/pages/tasks_page.dart';
 import 'firebase_options.dart';
 
 void main() async {
