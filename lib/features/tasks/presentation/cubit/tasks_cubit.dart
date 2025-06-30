@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../../../../firebase/firebase_service.dart';
+import '../../../../core/services/firebase_service.dart';
 import '../../domain/entities/task_model.dart';
 import '../../domain/usecases/get_tasks_usecase.dart';
 import 'tasks_state.dart';

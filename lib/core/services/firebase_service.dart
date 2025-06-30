@@ -1,9 +1,18 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+
+import '../../firebase_options.dart';
 
 class FirebaseService {
   static final FirebaseAnalytics _analytics = FirebaseAnalytics.instance;
   static final FirebaseCrashlytics _crashlytics = FirebaseCrashlytics.instance;
+
+  static Future<void> init() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
   /// Dispara um evento customizado para o Firebase Analytics
   static Future<void> logEvent({
